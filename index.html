@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecionando para a loja...</title>
+    <script>
+        // Links de destino
+        const LINK_IOS = "https://instagram.com";
+        const LINK_ANDROID = "https://linkedin.com";
+
+        // Obtém o User Agent do navegador
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        let urlRedirecionamento = "";
+
+        // 1. Verifica se é Android
+        if (/android/i.test(userAgent)) {
+            urlRedirecionamento = LINK_ANDROID;
+        } 
+        // 2. Verifica se é iOS (iPhone, iPad, iPod)
+        else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            urlRedirecionamento = LINK_IOS;
+        } 
+        // 3. Fallback (para desktop, outros SOs ou se a detecção falhar)
+        else {
+            // Pode ser um link para uma página de erro ou uma página com os dois botões
+            urlRedirecionamento = "https://meuapp.com/pagina-escolha-manual"; 
+        }
+
+        // Realiza o redirecionamento
+        if (urlRedirecionamento) {
+            window.location.href = urlRedirecionamento;
+        }
+
+    </script>
+</head>
+<body>
+    <p>Aguarde, estamos detectando seu sistema operacional e redirecionando...</p>
+</body>
+</html>
