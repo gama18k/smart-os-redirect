@@ -13,30 +13,6 @@ O script utiliza a propriedade `navigator.userAgent` do navegador para detectar 
 2.  **iOS (iPhone/iPad/iPod):** Redireciona para `LINK_IOS`.
 3.  **Outros/Fallback (Ex: Desktop):** Redireciona para um URL de fallback, onde o usuário pode escolher manualmente a loja de aplicativos, ou uma página de aviso.
 
-### Uso rápido
-
-Basta copiar o código abaixo para um arquivo `index.html` e alterar os links de destino dentro da tag `<script>`:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Redirecionando para a loja...</title>
-    <script>
-        // Links de destino
-        const LINK_IOS = "https://instagram.com"; // <-- ALTERE SEU LINK IOS AQUI
-        const LINK_ANDROID = "https://linkedin.com"; // <-- ALTERE SEU LINK ANDROID AQUI
-        
-        // ... (o restante do seu código JavaScript)
-        
-    </script>
-</head>
-<body>
-    <p>Aguarde, estamos detectando seu sistema operacional e redirecionando...</p>
-</body>
-</html>
-```
-
 ### Configuração
 
 Altere estas variáveis no topo da tag `<script>` para configurar os seus links:
